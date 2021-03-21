@@ -1,35 +1,38 @@
 const { DIRECTION } = require('./constant')
 
-const robot = {
-    x: 0,
-    y: 0,
-    direction: 0, //0 - 3
+function robot() {
+    this.x = 0
+    this.y = 0
+    this.direction = 0
+}
 
-    goAhead(n) {
-        switch (this.direction) {
-            case 0: //North
-                this.y += n
-                break
-            case 1: //East
-                this.x += n
-                break
-            case 2: //South
-                this.y -= n
-                break
-            case 3: //West
-                this.x -= n
-                break
-        }
-    },
-    turnLeft() {
-        this.direction = (this.direction + DIRECTION.length - 1) % DIRECTION.length
-    },
-    turnRight() {
-        this.direction = (this.direction + 1) % DIRECTION.length
-    },
-    printPosition() {
-        console.log(`X: ${this.x} Y: ${this.y} Direction: ${DIRECTION[this.direction]}`)
+robot.prototype.goAhead = function(n) {
+    switch (this.direction) {
+        case 0:
+            this.y += n
+            break
+        case 1:
+            this.x += n
+            break
+        case 2:
+            this.y -= n
+            break
+        case 3:
+            this.x -= n
+            break
     }
+}
+
+robot.prototype.turnLeft = function() {
+    this.direction = (this.direction + DIRECTION.length - 1) % DIRECTION.length
+}
+
+robot.prototype.turnRight = function () {
+    this.direction = (this.direction + 1) % DIRECTION.length
+}
+
+robot.prototype.printPosition = function () {
+    console.log(`X: ${this.x} Y: ${this.y} Direction: ${DIRECTION[this.direction]}`)
 }
 
 module.exports = robot

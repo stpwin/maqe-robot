@@ -1,23 +1,23 @@
 const { commandCodeParser } = require('./utils')
 const robot = require('./robot')
 
+const maqeRobot = new robot();
 const rawInput = process.argv.slice(2, 3)
 const inputString = rawInput.join('').toUpperCase()
 const commandGroup = commandCodeParser(inputString)
 
-//Loop through commandGroup then control robot
 for (const { commandCode, step } of commandGroup) {
     switch (commandCode) {
         case 'W':
-            step && robot.goAhead(step)
+            step && maqeRobot.goAhead(step)
             break
         case 'L':
-            robot.turnLeft()
+            maqeRobot.turnLeft()
             break
         case 'R':
-            robot.turnRight()
+            maqeRobot.turnRight()
             break
     }
 }
 
-robot.printPosition()
+maqeRobot.printPosition()
