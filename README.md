@@ -1,4 +1,4 @@
-[<img src="https://www.codemonday.com/assets/images/logos/codemonday-logo.jpg" alt="Codemonday" height="100px">](https://www.codemonday.com) 
+[<img src="https://www.codemonday.com/assets/icons/codemonday-text.svg" alt="Codemonday" height="100px">](https://www.codemonday.com) 
 # MAQE Assignment Challenge - MAQE Bot | [codemonday.com](https://www.codemonday.com)
 
 Assignment: https://maqe.github.io/maqe-bot.html
